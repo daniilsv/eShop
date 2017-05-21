@@ -2,16 +2,10 @@ package ru.dvs.eshop.data
 
 import android.app.Application
 
-import java.io.IOException
-
-import okhttp3.HttpUrl
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.dvs.eshop.data.network.Api
+import ru.dvs.eshop.data.components.eshop.EshopApi
 
 class App : Application() {
     private var retrofit: Retrofit? = null
@@ -38,12 +32,12 @@ class App : Application() {
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create()) //Конвертер, необходимый для преобразования JSON'а в объекты
                 .build()
-        api = retrofit!!.create(Api::class.java) //Создаем объект, при помощи которого будем выполнять запросы
+        eshop = retrofit!!.create(EshopApi::class.java) //Создаем объект, при помощи которого будем выполнять запросы
     }
 
     companion object {
 
-        var api: Api? = null
+        var eshop: EshopApi? = null
             private set
     }
 }

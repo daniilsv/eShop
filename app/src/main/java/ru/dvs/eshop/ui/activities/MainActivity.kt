@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         ButterKnife.bind(this)
 
-        App.api!!.getItem(1).enqueue(object : Callback<ItemInputResponse> {
+        App.eshop!!.getItem(1).enqueue(object : Callback<ItemInputResponse> {
             override fun onResponse(call: Call<ItemInputResponse>, response: Response<ItemInputResponse>) {
                 posts = ArrayList()
                 //posts!!.addAll(response.body())
