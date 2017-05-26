@@ -7,15 +7,15 @@ import ru.dvs.eshop.data.components.Icon
 
 class Vendor {
 
-    @SerializedName("id")
+    @SerializedName("original_id")
     @Expose
-    var id: String? = null
+    var originalId: Int? = null
     @SerializedName("parent_id")
     @Expose
-    var parentId: String? = null
+    var parentId: Int? = null
     @SerializedName("is_enabled")
     @Expose
-    var isEnabled: String? = null
+    var isEnabled: Boolean? = null
     @SerializedName("title")
     @Expose
     var title: String? = null
@@ -30,10 +30,7 @@ class Vendor {
     var url: String? = null
     @SerializedName("ordering")
     @Expose
-    var ordering: String? = null
-    @SerializedName("level")
-    @Expose
-    var level: Int? = null
+    var ordering: Int? = null
 
     override fun toString(): String {
         return title!!

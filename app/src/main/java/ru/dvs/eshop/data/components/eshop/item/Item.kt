@@ -6,18 +6,18 @@ import com.google.gson.annotations.SerializedName
 import ru.dvs.eshop.data.components.Icon
 
 class Item {
-    @SerializedName("id")
+    @SerializedName("original_id")
     @Expose
-    var id: String? = null
+    var originalId: Int? = null
     @SerializedName("is_enabled")
     @Expose
-    var isEnabled: String? = null
+    var isEnabled: Boolean? = null
     @SerializedName("ordering")
     @Expose
-    var ordering: String? = null
+    var ordering: Int? = null
     @SerializedName("category_id")
     @Expose
-    var categoryId: String? = null
+    var categoryId: Int? = null
     @SerializedName("art_no")
     @Expose
     var artNo: String? = null
@@ -26,43 +26,43 @@ class Item {
     var title: String? = null
     @SerializedName("price")
     @Expose
-    var price: String? = null
+    var price: Double? = null
     @SerializedName("price_old")
     @Expose
     var priceOld: Int? = null
     @SerializedName("quantity")
     @Expose
-    var quantity: String? = null
+    var quantity: Int? = null
     @SerializedName("variants")
     @Expose
-    var variants: List<Any>? = null
+    var variants: List<String>? = null
     @SerializedName("desc_short")
     @Expose
-    private var descShort: String? = null
+    var descShort: String? = null
     @SerializedName("desc_full")
     @Expose
-    private var descFull: String? = null
+    var descFull: String? = null
     @SerializedName("vendor_id")
     @Expose
-    private var vendorId: Int = 0
+    var vendorId: Int? = null
     @SerializedName("provider_id")
     @Expose
-    private var providerId: Int = 0
+    var providerId: Int? = null
     @SerializedName("category_add_id")
     @Expose
-    var categoryAddId: List<Int>? = null
+    var categoryAddId: List<Any>? = null
     @SerializedName("img")
     @Expose
-    private var img: Icon? = null
+    var img: Icon? = null
     @SerializedName("images")
     @Expose
-    private var images: List<Icon>? = null
+    var images: List<Icon>? = null
     @SerializedName("meta_keys")
     @Expose
-    private var metaKeys: String? = null
+    var metaKeys: String? = null
     @SerializedName("meta_desc")
     @Expose
-    private var metaDesc: String? = null
+    var metaDesc: String? = null
     @SerializedName("additional_items")
     @Expose
     var additionalItems: List<Int>? = null
@@ -74,39 +74,25 @@ class Item {
     var pubDate: String? = null
     @SerializedName("is_hit")
     @Expose
-    var isHit: String? = null
+    var isHit: Boolean? = null
     @SerializedName("is_sale")
     @Expose
-    var isSale: String? = null
+    var isSale: Boolean? = null
     @SerializedName("is_best")
     @Expose
-    var isBest: String? = null
+    var isBest: Boolean? = null
     @SerializedName("is_choise")
     @Expose
-    var isChoise: String? = null
+    var isChoise: Boolean? = null
     @SerializedName("url")
     @Expose
     var url: String? = null
     @SerializedName("tpl")
     @Expose
-    private var tpl: String? = null
-    @SerializedName("url_clean")
-    @Expose
-    var urlClean: String? = null
-    @SerializedName("category")
-    @Expose
-    var category: String? = null
+    var tpl: Any? = null
     @SerializedName("chars")
     @Expose
-    private var chars: Any? = null
-
-    fun getChars(): Any? {
-        return chars
-    }
-
-    fun setChars(chars: Any) {
-        this.chars = chars
-    }
+    var chars: Any? = null
 
     override fun toString(): String {
         return "Title: $title Price: $price"
